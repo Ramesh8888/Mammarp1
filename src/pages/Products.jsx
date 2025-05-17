@@ -25,7 +25,7 @@ const Products = () => {
     { id: 'mango', name: 'Mango pick', icon: '/images/Mango_pick.jpg'},
     { id: 'chicken', name: 'Chicken pick', icon: '/images/Chicken_pick.jpg'},
     { id: 'prawns', name: 'Prawns pick', icon: '/images/Banner/prawn.jpg'},
-    { id: 'mutton', name: 'Mutton pick', icon: '/public/images/Mutton_pick.jpg'},
+    { id: 'mutton', name: 'Mutton pick', icon: '/images/Mutton_pick.jpg'},
     { id: 'tomato', name: 'Tomato pick', icon: '/images/Banner/Lemon.webp'}
   ];
 

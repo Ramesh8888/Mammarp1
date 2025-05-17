@@ -617,7 +617,7 @@ const Home = () => {
               </div>
               <div className="hidden md:block">
                 <img
-                  src="public/images/karam.webp"
+                  src="/images/karam.webp"
                   // alt="Subscription"
                   className="w-full h-full object-cover"
                 />
