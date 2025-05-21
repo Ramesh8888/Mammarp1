@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-yellow-600 shadow-md py-2' : 'bg-yellow-500/80 backdrop-blur-sm py-2'
+        isScrolled ? 'bg-yellow-300 shadow-md py-2' : 'bg-yellow-300/80 backdrop-blur-sm py-2'
       }`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between">
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <img 
                   src="/images/Logos/MAR.png" 
                   alt="pickles Logo" 
-                  className="h-20 w-auto transition-transform duration-300 hover:scale-105"
+                  className="h-14 w-auto transition-transform duration-300 hover:scale-105"
                 />
                 <span className="text-xl font-bold text-black ml-3">Ma Amma Ruchulu</span>
               </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
                   className={`text-lg font-medium transition-colors ${
                     location.pathname === link.path
                       ? 'text-primary-600'
-                      : 'text-gray-700 hover:text-primary-600'
+                      : 'text-black hover:text-primary-600'
                   }`}
                 >
                   {link.name}
@@ -103,7 +103,7 @@ const Navbar = () => {
               {/* Search Button */}
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2 text-gray-600 hover:text-primary-600 transition-colors"
+                className="p-2 text-black hover:text-primary-600 transition-colors"
               >
                 <FaSearch className="w-5 h-5" />
               </button>
@@ -111,7 +111,7 @@ const Navbar = () => {
               {/* Cart */}
               <Link
                 to="/cart"
-                className="relative p-2 text-gray-600 hover:text-primary-600 transition-colors"
+                className="relative p-2 text-black hover:text-primary-600 transition-colors"
               >
                 <FaShoppingCart className="w-5 h-5" />
                 <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -123,7 +123,7 @@ const Navbar = () => {
               <div className="relative" ref={userMenuRef}>
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-full transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-200"
+                  className="p-2 text-black hover:text-primary-600 hover:bg-primary-50 rounded-full transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-200"
                 >
                   <FaUser className="w-5 h-5" />
                 </button>

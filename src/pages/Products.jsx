@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 import { toast } from 'react-hot-toast';
 import { products as productsApi } from '../services/api';
+import { mockProducts } from '../data/mockProducts';
 
 const Products = () => {
   const { addToCart } = useCart();
@@ -22,20 +23,15 @@ const Products = () => {
 
   const categories = [
     { id: 'all', name: 'All Products', icon: 'https://cdn-icons-png.flaticon.com/128/6785/6785304.png' },
-    { id: 'mango', name: 'Mango pick', icon: '/images/Mango_pick.jpg'},
-    { id: 'chicken', name: 'Chicken pick', icon: '/images/Chicken_pick.jpg'},
-    { id: 'prawns', name: 'Prawns pick', icon: '/images/Banner/prawn.jpg'},
-    { id: 'mutton', name: 'Mutton pick', icon: '/images/Mutton_pick.jpg'},
-    { id: 'tomato', name: 'Tomato pick', icon: '/images/Banner/Lemon.webp'}
+    { id: 'Veg_Pickles', name: 'Veg pickles', icon: '/images/veg/veg1.jpg'},
+    { id: 'Non-Veg_Pickles', name: 'Non-Veg Pickles', icon: '/images/Non-veg/Non-veg1.jpg'},
+    { id: 'Sweets', name: 'Sweets', icon: '/images/Sweets/swt1.jpg'},
+    { id: 'Hots', name: 'Hots', icon: '/images/Hots/hot1.jpg'},
+    { id: 'Ingredients', name: 'Ingredients', icon: '/images/Ingredients/Ing1.webp'}
   ];
 
   const allTags = [...new Set(products.flatMap(product => product.tags))];
 
-
-
-
-
-  
   const filteredProducts = products
     .filter(product => selectedCategory === 'all' || product.category === selectedCategory)
     .filter(product => product.name.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -56,15 +52,102 @@ const Products = () => {
       }
     });
 
+  // Function to add sample pickles, sweets, ingredients, and hot items to cart
+  const addSamplePicklesToCart = async () => {
+    try {
+      // Add Mango Pickle
+      await addToCart({
+        ...mockProducts[0],
+        quantity: 2
+      });
+
+      // Add Chicken Pickle
+      await addToCart({
+        ...mockProducts[1],
+        quantity: 1
+      });
+
+      // Add Lemon Pickle
+      await addToCart({
+        ...mockProducts[2],
+        quantity: 1
+      });
+
+      // Add Gulab Jamun
+      await addToCart({
+        ...mockProducts[4],
+        quantity: 2
+      });
+
+      // Add Rasgulla
+      await addToCart({
+        ...mockProducts[5],
+        quantity: 1
+      });
+
+      // Add Mustard Seeds
+      await addToCart({
+        ...mockProducts[8],
+        quantity: 2
+      });
+
+      // Add Pickling Spices Mix
+      await addToCart({
+        ...mockProducts[9],
+        quantity: 1
+      });
+
+      // Add Red Chilli Powder
+      await addToCart({
+        ...mockProducts[10],
+        quantity: 1
+      });
+
+      // Add Turmeric Powder
+      await addToCart({
+        ...mockProducts[11],
+        quantity: 1
+      });
+
+      // Add Spicy Boondhi
+      await addToCart({
+        ...mockProducts[12],
+        quantity: 2
+      });
+
+      // Add Hot Chips
+      await addToCart({
+        ...mockProducts[13],
+        quantity: 3
+      });
+
+      // Add Green Chilli Pickle
+      await addToCart({
+        ...mockProducts[14],
+        quantity: 1
+      });
+
+      toast.success('Sample items added to cart!');
+    } catch (error) {
+      console.error('Error adding sample items:', error);
+      toast.error('Failed to add sample items to cart');
+    }
+  };
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
         const response = await productsApi.getAll();
         setProducts(response.data);
+        // Add sample pickles to cart when using mock data
+        addSamplePicklesToCart();
       } catch (err) {
-        setError('Failed to load products');
-        toast.error('Failed to load products');
+        console.log('Using mock data due to API error:', err);
+        setProducts(mockProducts);
+        toast.error('Failed to load products from API, using sample data');
+        // Add sample pickles to cart when using mock data
+        addSamplePicklesToCart();
       } finally {
         setLoading(false);
       }
@@ -114,7 +197,7 @@ const Products = () => {
           <div className="relative">
             <input
               type="text"
-              placeholder="Search for dairy products..."
+              placeholder="Search for pickles products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent"
@@ -134,7 +217,7 @@ const Products = () => {
       <div className="max-w-7xl mx-auto px-3 py-4">
         <div className="flex gap-4">
           {/* Categories Sidebar */}
-          <div className="sticky top-32 z-10 w-24 bg-white rounded-lg shadow-md p-2">
+          <div className="sticky top-32 z-8 w-28 bg-white rounded-lg shadow-md p-2">
             {/* Categories Section */}
             <div className="mb-4">
               <h3 className="text-sm font-semibold mb-2">Categories</h3>

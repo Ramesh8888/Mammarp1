@@ -32,6 +32,7 @@ import Address from './pages/Address';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 
+
 // Add console logs to debug
 console.log('App.jsx loaded');
 
@@ -115,5 +116,7 @@ const App = () => {
     </Router>
   );
 };
+
+
 
 export default App; 

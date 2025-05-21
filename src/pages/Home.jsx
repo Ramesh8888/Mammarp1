@@ -200,96 +200,47 @@ const Home = () => {
   const categories = [
     { 
       id: 1, 
-      name: 'Amal', 
-      image: 'https://www.naturawfreshfoods.com/wp-content/uploads/2024/06/Amla-pickle-4.jpg', 
-      link: '/products?category=Amal' 
+      name: 'Veg Pickles', 
+      image: '/images/veg/veg1.jpg', 
+      link: '/products?category=Veg' 
     },
-    // { 
-    //   id: 2, 
-    //   name: 'Fresh Vegetables', 
-    //   image: 'https://i.pinimg.com/736x/da/4e/e6/da4ee6453b894c076b775350fe68cea5.jpg', 
-    //   link: '/products?category=vegetables' 
-    // },
-    // { 
-    //   id: 3, 
-    //   name: 'Fresh Fruits', 
-    //   image: 'https://i.pinimg.com/736x/7b/82/51/7b8251f15a271dc196009f14b7a77126.jpg', 
-    //   link: '/products?category=fruits' 
-    // },
-    // { 
-    //   id: 4, 
-    //   name: 'Milk Products', 
-    //   image: 'https://i.pinimg.com/736x/37/b6/11/37b61170e813bd28dc4a570485c1cffc.jpg', 
-    //   link: '/products?category=dairy' 
-    // },
-    // { 
-    //   id: 5, 
-    //   name: 'Ghee & Oils', 
-    //   image: 'https://i.pinimg.com/736x/c4/a1/f7/c4a1f74af939fcb0bf0f24011db494d2.jpg', 
-    //   link: '/products?category=ghee' 
-    // },
+     { 
+      id: 2, 
+      name: 'Non-Veg Pickles', 
+     image: '/images/Non-veg/Non-veg1.jpg', 
+      link: '/products?category=Non-veg pickles' 
+     },
+     { 
+       id: 3, 
+       name: 'Sweets', 
+      image: '/images/Sweets/swt1.jpg', 
+       link: '/products?category=sweets' 
+    },
+     { 
+      id: 4, 
+      name: 'Hots', 
+      image: '/images/Hots/hot1.jpg', 
+      link: '/products?category=Hots' 
+     },
+     { 
+       id: 5, 
+      name: 'Ingrediants', 
+      image: '/images/Ingredients/Ing1.webp', 
+      link: '/products?category=Ingrediants' 
+    },
     { 
       id: 6, 
-      name: 'Mango', 
-      image: 'https://media.istockphoto.com/id/528476560/photo/mango-pickle.jpg?s=612x612&w=0&k=20&c=1Hi9BzNeMEfKkBOMniMyxWF4mVs8LXrE-qHEu3F_R5M=', 
-      link: '/products?category=Mango' 
+      name: 'All Types of Sweets&Hots', 
+      image: '/images/All/all.jpg', 
+      link: '/products?category=All Types of Sweets&Hots' 
     },
-    { 
-      id: 7, 
-      name: 'Tamarind', 
-      image: 'https://m.media-amazon.com/images/I/61n8JOY6b7L._AC_UF1000,1000_QL80_.jpg', 
-      link: '/products?category=Tamarind' 
+     { 
+      id: 6, 
+      name: 'All Types of Pickles', 
+      image: '/images/All/all.jpg', 
+      link: '/products?category=All Types of Pickles' 
     },
-    // {
-    //   id: 8,
-    //   name: 'Pulses (Chemical-free)',
-    //   image: 'https://i.pinimg.com/736x/53/63/01/536301a5234d63afd9bafde17d830a18.jpg',
-    //   link: '/products?category=pulses'
-    // },
-    // {
-    //   id: 9,
-    //   name: 'Dry Fruits & Seeds',
-    //   image: 'https://i.pinimg.com/736x/ef/fb/f0/effbf08ec26d14f022859691f5452d2d.jpg',
-    //   link: '/products?category=dryfruits'
-    // },
-    {
-      id: 10,
-      name: 'Kariveypaku pickle',
-      image: 'https://i0.wp.com/ahahomefoods.com/wp-content/uploads/2023/02/Curry-leaves-Pickle.jpg?fit=600%2C600&ssl=1',
-      link: '/products?category=kariveypaku'
-    },
-    // {
-    //   id: 11,
-    //   name: 'Cereals & Millets',
-    //   image: 'https://i.pinimg.com/736x/53/63/01/536301a5234d63afd9bafde17d830a18.jpg',
-    //   link: '/products?category=cereals'
-    // },
-    // {
-    //   id: 12,
-    //   name: 'Salt & Sugar',
-    //   image: 'https://i.pinimg.com/736x/ef/fb/f0/effbf08ec26d14f022859691f5452d2d.jpg',
-    //   link: '/products?category=essentials'
-    // },
-    {
-      id: 13,
-      name: 'Tomato pickle',
-      image: 'https://meenakshirecipe.com/wp-content/uploads/2024/02/IMG-20240306-WA0015.jpg',
-      link: '/products?category=tomato'
-    },
-    {
-      id: 14,
-      name: 'Gongura pickle',
-      image: 'https://chaarviconnects.com/wp-content/uploads/2024/02/Gonglora2.jpg',
-      link: '/products?category=Gongura'
-    },
-    {
-      id: 15,
-      name: 'Lemon pickle',
-      image: 'https://desicondiments.com/wp-content/uploads/2020/06/DSC_8869.jpg',
-      link: '/products?category=Lemon'
-    }
   ];
-
   const farmToHomeImages = [
     {
       id: 1,
@@ -339,7 +290,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-7 bg-white">
+    <div className="min-h-screen pt-2 bg-white">
       {/* Hero Carousel */}
       <div className="relative">
         <Slider {...carouselSettings} className="w-full">
@@ -482,7 +433,7 @@ const Home = () => {
                               )}
                             </div>
                             <div className="flex items-center">
-                              <span className="text-yellow-400 mr-0.5 sm:mr-1">★</span>
+                              <span className="text-yellow-300 mr-0.5 sm:mr-1">★</span>
                               <span className="text-xs sm:text-sm text-gray-600">{product.rating} ({product.reviews})</span>
                             </div>
                             <button className="w-full bg-red-600 hover:bg-primary-700 text-white text-sm font-medium py-1.5 px-3 rounded-md transition-colors duration-200">
@@ -607,19 +558,19 @@ const Home = () => {
                 >
                   View Plans
                 </Link> */}
-                <h1 class="font-bold text-4xl">Simple and Clear Options:</h1><br></br>
-                <h2 className='text-green-800'>1. "Ma Amma Ruchulu Pickles – A Taste of Tradition in Every Bite!"</h2><br/>
-                <h2 className='text-green-800'>2. "Ma Amma Ruchulu Pickles – All Types, All Tastes, All Love!"</h2><br/>
-                <h2 className='text-green-800'>3. "From Our Home to Yours – Ma Amma Ruchulu Pickles."</h2><br/>
-                <h2 className='text-green-800'>4. "Ma Amma Ruchulu – Authentic Pickles, Just Like Mom Makes."</h2><br/>
-                <h2 className='text-green-800'>5. "Every Jar, a Flavorful Memory – Ma Amma Ruchulu Pickles."</h2><br/>
-                <h2 className='text-green-800'>6. "Andariki Kavalsina Avakaya ikkada ready!"</h2>
+               <center> <h1 class="font-bold text-4xl">Simple and Clear Options:</h1></center><br></br>
+                <h2 className='text-black'>1. "Ma Amma Ruchulu Pickles – A Taste of Tradition in Every Bite!"</h2><br/>
+                <h2 className='text-black'>2. "Ma Amma Ruchulu Pickles – All Types, All Tastes, All Love!"</h2><br/>
+                <h2 className='text-black'>3. "From Our Home to Yours – Ma Amma Ruchulu Pickles."</h2><br/>
+                <h2 className='text-black'>4. "Ma Amma Ruchulu – Authentic Pickles, Just Like Mom Makes."</h2><br/>
+                <h2 className='text-black'>5. "Every Jar, a Flavorful Memory – Ma Amma Ruchulu Pickles."</h2><br/>
+                <h2 className='text-black'>6. "Andariki Kavalsina Avakaya ikkada ready!"</h2>
               </div>
               <div className="hidden md:block">
                 <img
                   src="/images/karam.webp"
                   // alt="Subscription"
-                  className="w-full h-full object-cover"
+                  className="w-full h-200 object-cover"
                 />
               </div>
             </div>
@@ -628,7 +579,7 @@ const Home = () => {
       </section>
 
       {/* Why Maa Amma Ruchulu */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-yellow-400">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-yellow-300">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Maa Amma Ruchulu?</h2>
